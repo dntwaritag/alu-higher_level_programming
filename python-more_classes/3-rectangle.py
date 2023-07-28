@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-""""
+"""
 It defines a rectangle with private attributes and public methods for area, perimeter,
 and string representation.
 """
-
 
 class Rectangle:
     """
@@ -22,7 +21,7 @@ class Rectangle:
     @property
     def width(self):
         """
-        set  the width attribute.
+        set the width attribute.
         """
         return self.__width
 
@@ -67,19 +66,20 @@ class Rectangle:
         If width or height is equal to 0, perimeter is equal to 0.
         """
         if self.__width == 0 or self.__height == 0:
-            return (0)
-        return ((self.__width * 2) + (self.__height * 2))
+            return 0
+        return self.__width * 2 + self.__height * 2
 
     def __str__(self):
-        """Return the printable representation of the Rectangle.
+        """
+        Return the printable representation of the Rectangle.
         Represents the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
-            return ("")
+            return ""
 
         rect = []
         for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
+            [rect.append("#") for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
-        return ("".join(rect))
+        return "".join(rect)
