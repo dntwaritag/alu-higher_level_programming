@@ -3,15 +3,16 @@
 Module: 3-rectangle
 
 This is the Rectangle module.
-It defines a rectangle with private attributes and public methods for area, perimeter,
-and string representation.
+It defines a rectangle with private attributes and public methods for area
+perimeter, and string representation
 """
 
 
 class Rectangle:
     """
     This is the Rectangle class.
-    It defines a rectangle with private attributes and public methods for area, perimeter,
+    It defines a rectangle with private attributes and public methods fo
+    area, perimeter,
     and string representation.
     """
 
@@ -69,7 +70,8 @@ class Rectangle:
         Calculates and returns the rectangle perimeter.
         If width or height is equal to 0, perimeter is equal to 0.
         """
-        return 0 if self.__width == 0 or self.__height == 0 else 2 * (self.__width + self.__height)
+        return 0 if self.__width == 0 or self.__height == 0
+                 else 2 * (self.__width + self.__height)
 
     def __str__(self):
         """
