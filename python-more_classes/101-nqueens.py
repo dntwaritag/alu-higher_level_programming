@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""To solve the N queens puzzle, we can use a backtracking algorithm. The backtracking algorithm systematically explores all possible configurations of placing N queens on the N×N chessboard while ensuring that no two queens attack each other. We will start by placing the first queen and then recursively try to place the remaining queens, backtracking if we encounter an invalid configuration."""
+"""To solve the N queens puzzle, we can use a backtracking algorithm. 
+The backtracking algorithm systematically explores all possible 
+configurations of placing N queens on the N×N chessboard while ensuring that 
+no two queens attack each other. 
+We will start by placing the first queen and then recursively try to place th
+e remaining queens, backtracking if we encounter an invalid configuration."""
 import sys
 
 
