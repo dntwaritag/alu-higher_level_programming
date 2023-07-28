@@ -4,6 +4,7 @@ It defines a rectangle with private attributes and public methods for area, peri
 and string representation.
 """
 
+
 class Rectangle:
     """
     This is the Rectangle class.
@@ -21,14 +22,14 @@ class Rectangle:
     @property
     def width(self):
         """
-        set the width attribute.
+        Get the width attribute.
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Setter method to set the width attribute.
+        Set the width attribute.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -39,14 +40,14 @@ class Rectangle:
     @property
     def height(self):
         """
-        Getter method to retrieve the height attribute.
+        Get the height attribute.
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Setter method to set the height attribute.
+        Set the height attribute.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -67,7 +68,7 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return 0
-        return self.__width * 2 + self.__height * 2
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
         """
