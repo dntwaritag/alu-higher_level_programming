@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-It defines a rectangle with private attributes and public methods for area, perimeter,
+It defines a rectangle with private attributes and public methods for area,
+perimeter,
 and string representation.
 """
 
@@ -8,7 +9,8 @@ and string representation.
 class Rectangle:
     """
     This is the Rectangle class.
-    It defines a rectangle with private attributes and public methods for area, perimeter,
+    It defines a rectangle with private attributes and public methods for area,
+    perimeter,
     and string representation.
     """
 
