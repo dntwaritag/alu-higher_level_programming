@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Module: 3-rectangle
-
-This is the Rectangle module.
+""""
 It defines a rectangle with private attributes and public methods for area, perimeter,
 and string representation.
 """
@@ -25,7 +22,7 @@ class Rectangle:
     @property
     def width(self):
         """
-        Getter method to retrieve the width attribute.
+        set  the width attribute.
         """
         return self.__width
 
@@ -69,20 +66,20 @@ class Rectangle:
         Calculates and returns the rectangle perimeter.
         If width or height is equal to 0, perimeter is equal to 0.
         """
-        return 0 if self.__width == 0 or self.__height == 0 else 2 * (self.__width + self.__height)
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-        """
-        String representation of the rectangle using '#'.
-        If width or height is equal to 0, return an empty string.
+        """Return the printable representation of the Rectangle.
+        Represents the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
-            return ""
-        return "\n".join(['#' * self.__width for _ in range(self.__height)])
+            return ("")
 
-    def __repr__(self):
-        """
-        Formal string representation of the rectangle object.
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
-
+        rect = []
+        for i in range(self.__height):
+            [rect.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
