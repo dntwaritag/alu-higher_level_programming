@@ -3,14 +3,16 @@
 Module: 2-rectangle
 
 This is the Rectangle module.
-It defines a rectangle with private attributes and public methods for area and perimeter.
+It defines a rectangle with private attributes and public methods for
+area and perimeter.
 """
 
 
 class Rectangle:
     """
     This is the Rectangle class.
-    It defines a rectangle with private attributes and public methods for area and perimeter.
+    It defines a rectangle with private attributes and public methods for
+    area and perimeter.
     """
 
     def __init__(self, width=0, height=0):
