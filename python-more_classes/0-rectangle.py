@@ -12,4 +12,3 @@ class Rectangle:
     It defines a simple rectangle without any attributes or methods.
     """
     pass
-
