@@ -1,38 +1,40 @@
 #!/usr/bin/python3
-"""module documentation"""
-import sys
+"""documentation"""
+
 import MySQLdb
+import sys
+
 
 if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    # Get MySQL username, password, database name, and state
+    mysql_username, mysql_password, database_name, state_name = sys.argv[1:]
 
-    # Open database connection
-    db = MySQLdb.connect(
+    # Connect to MySQL server on localhost at port 3306
+    conn = MySQLdb.connect(
         host='localhost',
         port=3306,
-        user=username,
-        passwd=password,
-        db=db_name
+        user=mysql_username,
+        passwd=mysql_password,
+        db=database_name
     )
 
-    # prepare a cursor object
-    cursor = db.cursor()
+    # Create a cursor object to execute SQL queries
+    cursor = conn.cursor()
 
-    # execute SQL query
-    cursor.execute('SELECT cities.id, cities.name, states.name\
-                    FROM cities\
-                    JOIN states\
-                    ON cities.state_id = states.id\
-                    ORDER BY cities.id ASC')
+    # Execute SQL query to retrieve all cities of the given state
+    cursor.execute(
+        "SELECT cities.name FROM cities "
+        "JOIN states ON cities.state_id = states.id "
+        "WHERE states.name = %s "
+        "ORDER BY cities.id ASC",
+        (state_name,)
+    )
 
-    # fetch all rows
+    # Fetch all rows and print them
     rows = cursor.fetchall()
+    cities = [row[0] for row in rows]
+    print(", ".join(cities))
 
-    # print out the results
-    for row in rows:
-        print(row)
-
-    # disconnect from server
-    db.close()
+    # Close cursor and database connection
+    cursor.close()
+    conn.close()

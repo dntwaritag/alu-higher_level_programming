@@ -1,38 +1,35 @@
 #!/usr/bin/python3
-"""module documentation"""
+"""Lists all State objects from the database hbtn_0e_6_usa"""
+
 import sys
-import MySQLdb
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
+
 
 if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    # Get command line arguments
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
 
-    # Open database connection
-    db = MySQLdb.connect(
-        host='localhost',
-        port=3306,
-        user=username,
-        passwd=password,
-        db=db_name
-    )
+    # Create engine and session factory
+    db_url = "mysql+mysqldb://" + mysql_username +\
+             ":" + mysql_password + "@" + \
+             "localhost:3306/" + database_name
+    engine = create_engine(db_url)
 
-    # prepare a cursor object
-    cursor = db.cursor()
+    Session = sessionmaker(bind=engine)
 
-    # execute SQL query
-    cursor.execute('SELECT cities.id, cities.name, states.name\
-                    FROM cities\
-                    JOIN states\
-                    ON cities.state_id = states.id\
-                    ORDER BY cities.id ASC')
+    # Create session
+    session = Session()
 
-    # fetch all rows
-    rows = cursor.fetchall()
+    # Query for all State objects
+    states = session.query(State).order_by(State.id).all()
 
-    # print out the results
-    for row in rows:
-        print(row)
+    # Print results
+    for state in states:
+        print(f"{state.id}: {state.name}")
 
-    # disconnect from server
-    db.close()
+    # Close session
+    session.close()
