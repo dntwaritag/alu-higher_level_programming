@@ -10,6 +10,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """
         Create a Square class for the work
+
         :param size: The size of the square
         :param x: The x coordinate of the square
         :param y: The y coordinate of the square
@@ -21,6 +22,7 @@ class Square(Rectangle):
     def size(self):
         """
         Return the size of the square
+
         :return: The size of the square
         """
         return self.width
@@ -29,6 +31,7 @@ class Square(Rectangle):
     def size(self, value):
         """
         Set the size of the square
+
         :param value: The size of the square
         """
         self.width = value
@@ -37,6 +40,7 @@ class Square(Rectangle):
     def __str__(self):
         """
         Return the string representation of the square
+
         :return: The string representation of the square
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
@@ -44,6 +48,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """
         Update the square
+
         :return: The updated square
         """
         if len(args) != 0:
@@ -77,6 +82,7 @@ class Square(Rectangle):
     def to_dictionary(self):
         """
         Return a dictionary representation of the square
+
         :return: The dictionary representation of the square
         """
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
