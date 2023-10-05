@@ -1,0 +1,1 @@
+Welcome to the Front-End Web Development curriculum's JavaScript Web Scraping project. In this project, you will learn how to interact with web content using JavaScript. You will work on various tasks that involve reading and writing files, making HTTP requests, and parsing JSON data.
