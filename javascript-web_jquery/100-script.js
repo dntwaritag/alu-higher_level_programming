@@ -1,10 +1,3 @@
-#!/usr/bin/node
-
-$.ajax({
-  url: 'https://fourtonfish.com/hellosalut/?lang=fr',
-  type: 'GET',
-  dataType: 'json',
-  success: (json) => {
-    $('div#hello').text(json);
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('HEADER').style.color = '#FF0000';
 });
