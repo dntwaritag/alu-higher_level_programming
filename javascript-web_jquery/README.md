@@ -1,0 +1,1 @@
+This project focuses on enhancing your understanding of JavaScript and jQuery for web development. You will be working on various tasks to manipulate the Document Object Model (DOM) and interact with external APIs using jQuery.
